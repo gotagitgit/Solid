@@ -1,6 +1,7 @@
 ﻿using MainApp.DIP;
 using MainApp.ISP;
 using MainApp.LSP;
+using MainApp.OCP;
 using MainApp.SRP;
 
 namespace MainApp;
@@ -20,7 +21,10 @@ internal class Program
         //ISPDemo.RunDemo();
 
         // DIP Demo
-        DIPDemo.RunDemo();
+        //DIPDemo.RunDemo();
+
+        // OCP Demo
+        OCPDemo.RunDemo();
 
         Console.ReadLine();
 
