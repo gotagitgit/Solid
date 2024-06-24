@@ -1,4 +1,5 @@
-﻿using MainApp.ISP;
+﻿using MainApp.DIP;
+using MainApp.ISP;
 using MainApp.LSP;
 using MainApp.SRP;
 
@@ -16,7 +17,10 @@ internal class Program
         //LSPDemo.Run();
 
         // ISP Demo
-        ISPDemo.RunDemo();
+        //ISPDemo.RunDemo();
+
+        // DIP Demo
+        DIPDemo.RunDemo();
 
         Console.ReadLine();
 

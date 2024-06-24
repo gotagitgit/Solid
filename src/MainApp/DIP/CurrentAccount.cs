@@ -1,4 +1,4 @@
-﻿namespace MainApp.DIP;
+﻿namespace MainApp.ISP;
 
 internal class CurrentAccount(int accountId, Customer customer, decimal balance, decimal overDraft) : Account(accountId, customer, balance), IAccount
 {

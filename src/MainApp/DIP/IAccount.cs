@@ -1,4 +1,4 @@
-﻿namespace MainApp.DIP;
+﻿namespace MainApp.ISP;
 
 internal interface IAccount
 {
