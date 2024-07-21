@@ -1,5 +1,6 @@
 ﻿using MainApp.OCP.Accounts;
 using MainApp.OCP.Validations;
+using MainApp.OCP.VisitorPattern.LoanVisitors;
 
 namespace MainApp.OCP;
 
@@ -12,6 +13,28 @@ internal class BankService : IBankService
     {
         _loggingService = loggingService;
         _accountValidations = accountValidations.ToDictionary(x => x.AccountType, y => y);
+    }
+
+    public void ComputeTotalLoans(Customer customer, ILoanRateVisitor loanVisitor)
+    {
+        var loans = customer.Loans;
+
+        var totalLoanPayment = 0m;
+
+        _loggingService.LogMessage($"{customer.Name} Loans:");
+
+        foreach (var loan in loans)
+        {
+            loan.Accept(loanVisitor);
+
+            var loanPayment = loan.CalculateTotalPayment();
+
+            totalLoanPayment += loanPayment;
+
+            _loggingService.LogMessage($"Payment for {loan.Type} is {totalLoanPayment}");
+        }
+
+        _loggingService.LogMessage($"Total payment for all Loans is {totalLoanPayment}");
     }
 
     public void Withdraw(Customer customer, int accountId, decimal amount)

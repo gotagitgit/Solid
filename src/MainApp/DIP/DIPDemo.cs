@@ -7,7 +7,8 @@ internal class DIPDemo
     {
         var serviceCollection = new ServiceCollection();
 
-        serviceCollection.AddScoped<ILoggingService, LoggingService>();
+        //serviceCollection.AddScoped<ILoggingService, LoggingService>();
+        serviceCollection.AddScoped<ILoggingService, DiagnosticsLogging>();
         serviceCollection.AddScoped<IBankService, BankService>();
 
         var serviceProvider = serviceCollection.BuildServiceProvider();

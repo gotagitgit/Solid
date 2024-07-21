@@ -11,4 +11,10 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
   </ItemGroup>
 
+    <ItemGroup>
+	    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+		    <_Parameter1>SolidTests</_Parameter1>
+	    </AssemblyAttribute>
+    </ItemGroup>
+
 </Project>
